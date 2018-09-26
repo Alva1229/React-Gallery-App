@@ -16,7 +16,7 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route path ="/search/:tag" render={ props => <Container tag={ props.match.params.tag }/> } />
-            <Route exact path ="/" render={ props => <Container tag='cats'/> } />
+            <Route exact path ="/" render={ props => <Container tag='mustang'/> } />
             <Route component={NotFound}/>
           </Switch>
         </div>
