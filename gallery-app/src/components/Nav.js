@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// Uses react router for navigation links
 const Nav = () => ( 
           <nav className="main-nav">
             <ul>

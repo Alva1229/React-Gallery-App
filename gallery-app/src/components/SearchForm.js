@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 class SearchForm extends Component {
   
+    //Event that adds input text to url
     handleSubmit = e => {
         e.preventDefault();
         let newSearch = '/search/' + this.search.value;
@@ -10,6 +11,7 @@ class SearchForm extends Component {
         e.currentTarget.reset();
     }
 
+    // search form 
     render() { 
         return (  
             <form className="search-form" onSubmit={this.handleSubmit}>
