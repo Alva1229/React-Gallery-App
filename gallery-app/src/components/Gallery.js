@@ -1,31 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Image from './Image';
 import NotFound from '../components/NotFound';
 
-class Gallery extends Component {
-    state = {  }
+const Gallery = props =>{
 
-    render() { 
+        const results = props.data;
+        let pictures;
+        if(results.length > 0) {
+          pictures = results.map(data =>
+              <Image
+                  url={`https://farm${data.farm}.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}
+                  key={data.id}
+                  alt={data.title}/>
+          );
+      } else {
+          pictures = <NotFound />
+      }
+
         return ( 
         <div className="photo-container">
-            <h2>Results</h2>
                 <ul>
-                    <li>
-                      <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="https://farm5.staticflickr.com/4342/36338751244_316b6ee54b.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="https://farm5.staticflickr.com/4343/37175099045_0d3a249629.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
-                    </li>
-                    <NotFound />
+                   {pictures}
                 </ul>
         </div>
          );
     }
-}
  
 export default Gallery;
