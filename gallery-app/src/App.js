@@ -10,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename="/techdegree-project-11" forceRefresh={true}>
+      <BrowserRouter basename="/React-Gallery-App" forceRefresh={true}>
         <div className="container">
           <SearchForm onSearch={this.performSearch}/>
           <Nav />
